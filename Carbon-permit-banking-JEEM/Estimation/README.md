@@ -30,7 +30,7 @@ This repository provides the MATLAB and Dynare code used to replicate the figure
 To run this replication package, you need:
 
 - **MATLAB**: Version R2021a or later.
-- **Dynare**: Version 5.x or 6.x.  
+- **Dynare**: Version 5.x only
 - **Operating System**: Compatible with Windows, macOS, or Linux.
 
 ### MATLAB Toolboxes
@@ -42,7 +42,7 @@ No specific toolboxes are required, but the Optimization Toolbox is recommended 
 
 1. Clone this repository to your local machine:
    ```bash
-   git clone https://github.com/Vermandel/ReplicationPackages/tree/main/Carbon-permit-banking-JEEM/Simulations
+   git clone https://github.com/Vermandel/ReplicationPackages/tree/main/Carbon-permit-banking-JEEM/Estimation
    cd carbon-permit-banking
    ```
 
@@ -64,35 +64,11 @@ No specific toolboxes are required, but the Optimization Toolbox is recommended 
 
 Each `.mod` file corresponds to specific figures in the paper. Run the files using Dynare as follows:
 
-1. **Figure 6: "European-Union Emission Trading System Cap"**
+1. **Table 2: "Estimated parameters"**, **Figure 3: "Impulse response functions"**
    ```matlab
-   run Figure_Cap.m
+   dynare DSV.mod
    ```
 
-2. **Figure 7: "Projections under pre and post EU-ETS 2023 cap reform"**
-   ```matlab
-   dynare run_policy1_baseline.mod
-   ```
-
-3. **Figure 10: "The impacts of frontloading allowances"**
-   ```matlab
-   dynare run_policy2_frontloading.mod
-   ```
-
-4. **Figure 11: "Permit banking and the market stability reserve"**
-   ```matlab
-   dynare run_policy3_msr.mod
-   ```
-
-5. **Figure 12: "Cap policy versus carbon tax"**
-   ```matlab
-   dynare run_policy_comparison.mod
-   ```
-
-6. **Figure A.1: "Carbon emissions with limited borrowing (in million tons of CO2)"**
-   ```matlab
-   run_policy1_baseline_borro_graph.m
-   ```
 
 ### Output
 The scripts will generate:
@@ -105,14 +81,13 @@ The scripts will generate:
 
 ```
 /carbon-permit-banking
-├── README.md                # Documentation
-├── LICENSE                  # License file
-├── Figure_Cap.m             # Code for Figure 6
-├── run_policy1_baseline.mod # Code for Figure 7
-├── run_policy2_frontloading.mod # Code for Figure 10
-├── run_policy3_msr.mod      # Code for Figure 11
-├── run_policy_comparison.mod # Code for Figure 12
-├── run_policy1_baseline_borro_graph.m # Code for Figure A.1
+├── README.md                			# Documentation
+├── LICENSE                  			# License file
+├── /estimation/             			# folder for the nonlinear estimation routine
+├── DSV.mod 				 			# Dynare file for the model estimation
+├── DSV_mle_estimates_temp.mat			# Matlab file containing estimated mode
+├── DSV_mode.mat      					# Matlab file containing estimated mode
+├── Data_Estimation_062009_122019.xlsx 	# Excel file containing the set of observable variables
 ```
 
 ---
