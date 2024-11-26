@@ -1,0 +1,10 @@
+Starting Dynare (version 6.1).
+Calling Dynare with arguments: none
+Starting preprocessing of the model file ... 
+WARNING: the location C:\Users\gauth\AppData\Roaming\dynare.ini for the configuration file is obsolete; please see the reference manual for the new location. 
+ 
+Macro-processing error: backtrace... 
+- @#include: run_policy1_baseline_borro_2.mod:12.1-32 Could not open core_model_borro.mod. The following directories were searched: 
+   * C:\Users\gauth\Dropbox\Articles\Published\2024_Cap_Trade_Climate\C_Codes\2_Revised\Shared_Codes\D_Policy_Simulations 
+ 
+Preprocessing time: 0h00m00s.
