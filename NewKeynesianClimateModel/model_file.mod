@@ -106,7 +106,6 @@ parameters
 	gZ0_400		${g_{z,t_{0}} \times 400}$ 			(long_name='Initial TFP growth'), 
 	gS0_400		${g_{\sigma,t_{0}}}$ 		(long_name='Decay rate decoupling'), 
 	GS1_400		${\delta_{\sigma}}$ 		(long_name='Decay rate emission intensity'), 
-	PI_400		${\pi_^{\star}{\infty} \times 400}$ 			(long_name='Inflation ss'), 
 	rho_b		${\rho_b}$ 					(long_name='AR demand'),
 	rho_p		${\rho_b}$ 					(long_name='AR price'),
 	rho_e		${\rho_e}$ 					(long_name='AR emissions'),
@@ -124,8 +123,7 @@ parameters
     phi_star	${\phi_{*}}$ 				(long_name='Trend stance')
 	MP_y_n
 	MP_r_n
-	Et_rn
-	yy0,
+	yy0,THETA2020
 	tau0_USD		${\tau_{t_{0}}}$  (long_name='Initial carbon price (\$/ton)')
 	mc_no_damage ygap MP_transfer
 	
@@ -160,6 +158,7 @@ parameters
 	SCC_n 		${SCC^{\star}_t}$ (long_name='Social Cost of Carbon (natural)'),
 	IS 			${IS_t}$ (long_name='Consumption'),
 	rrn100 		${r^{\star}_t}$ (long_name='Natural Rate')
+	
 	;
 	var lny 	${\hat{y}}$ 				(long_name='Detrended GDP'),
         lnc 	${\hat{c}}$ 				(long_name='Detrended cons'),%		
@@ -180,80 +179,68 @@ parameters
 %----------------------------------------------------------------
 % 2. Calibration
 %----------------------------------------------------------------
-% shock process
-rho_p   	= 0.95; 				% productivity 
-rho_b   	= 0.95; 				% productivity 
-rho_e		= 0;
-rho_r		= 0.2;
 
-%% Trends
-L0			= 4.85;%3.8;4.38;4.85; 	
-LT			= 10.48;
-lg			= 0.025/4;
-gZ0_400 	= 1.70;
-%GZ1_400 	= 0.3;
-GZ1			= 0.0072/4;
+/* Panel A: Climate Parameters */ 
+xi				= 3/11;
+M_1750  		= 545;
+gamma			= 1.5*2.379e-5;
+theta2			= 2.6;
+deltapb			= 1-(1-0.017)^(1/4);
+delta_M			= 0;
 
-gS0_400 	= 0.8;
-GS1_400		= 0;
-rr0_400		= 5;
-%% initial values
-Y0			= 30/4; % 1970: 18  ; 1980: 26.4 ; 1985: 30
-E0			= 20.30/4; % 1980:19.48/4
-mu0			= 0.0001;
-M0			= 338*2.13;% 1980:338*2.13 1985:346*2.13;
-h0			= 1;
-b			= 0.85;
-alpha 		= .7;
-sigmaL		= 1/2;
-kappa		= 28;
-varsigma	= 4;
-rho 		= 0.75;
-phi_pi		= 1.5;
-phi_y		= 0.09;
-% Climate parameters
-gamma		= 1.5*2.379e-5;
+/* Panel B: Economics Parameters */ 
+nu				= 0.05;
+Dc				= 0.97;
+omega			= 0.02;
+LT				= 10.48;
+lg				= 0.025/4;
+varsigma		= 4;
+GZ1				= 0.0072/4;
+GS1_400			= 0;
+alpha 			= .7;
+PI				= 1/400;
 
-% abatement sector
-%deltapb		= 1-(1-0.025)^(1/(4*5));
-%pb2019		= 544/0.9287;
-%pb			= pb2019/(1-deltapb)^(4*(2016-1961));	
-deltapb		= 1-(1-0.017)^(1/4);
-delthet0	= 1;
-theta2		= 2.6;
+/* Panel C: Initial Conditions */ 
+Y0				= 30/4;
+PI0_400     	= 10;
+E0				= 20.30/4;
+THETA2020		= 0.109;
+L0				= 4.85;
+M0				= 338*2.13;
+mu0				= 0.0001;
+h0				= 1;
+rr0_400			= 5;
 
-delta_M		= 0;
-xi			= 3/11;
-M_1750  	= 545;
+/* additional parameters */
+delthet0		= 1;
+y0          	= 1.0;
 
+/* Estimated parameters */ 
+rho_b 			= 0.7594;
+rho_p 			= 0.9685;
+rho_r 			= 0.7167;
+rho_e 			= 0.9608;
+gZ0_400			= 1.9607;
+gS0_400			= 1.3168;
+sigmaC			= 1.8854;
+sigmaL			= 0.3239;
+kappa			= 187.3311;
+delta_pi_star	= 0.0192;
+rr0_400			= 8.5670;
+rho				= 0.7858;
+phi_pi			= 0.5050;
+phi_y			= 0.0811;
+b				= 0.2801;
+Et 				= 0.5517;
 
-kappa		= 102.72410808;
-rho			= 0.63370700;
-phi_pi		= .80776810;
-phi_y		= 0.20414580;
-Dc			= 0.97;
-b			= .76613436;
-omega		= 0.02;
-y0          = 1.0;
-rho_b 		= 0.99170991 ;
-rho_p 		= 0.86668108 ;
-gZ0_400 	= 1.79151844;
-sigmaC 		= 1.64088274  ;
-sigmaL 		= .33875988 ;
+/* parameters to activate addons */
 tf			= 1;
-nu			= 0.05;
 MP_R		= 0;
 MP_PI		= 0;
-Et			= 0.75;
 phi_dy 		= 0;
-PI0_400     = 10;
-PI_400		= 1;
 phi_star    = 0;
 MP_y_n    	= 1;
 MP_r_n    	= 0;
-Et_rn		= 0;
-sigmaC 		= 2.5;
-delta_pi_star = 7.5/400;
 MP_transfer = 0;
 
 %----------------------------------------------------------------
@@ -387,7 +374,10 @@ end;
 %----------------------------------------------------------------
 % 4. Computation
 %----------------------------------------------------------------
+
+
 endval;
+	% setting initial variables of the simulations
 	Z 		= Z0;
 	L		= L0;
 	y		= yy0;
@@ -401,9 +391,6 @@ endval;
 	THETA1	= THETA0;
 	y_n    = y0;
 	pi_bar = PI0;
-	@#if SIMULATIONS
-%	c		= c0;
-	@#endif
 end;
 
 
@@ -413,17 +400,14 @@ steady_state_model;
 	gZ0			= gZ0_400/400;
 	gS0			= gS0_400/400;
 	GS1			= GS1_400/400;
-	PI			= PI_400/400;
 	PI0			= PI0_400/400;
-
-	Hss=1;
 	c_yss 	 	= 1-nu*(1-(varsigma-1)/varsigma);
-	chi			=  (alpha*(1-omega)^sigmaL)*(varsigma-1)/varsigma/(((c_yss*Hss^alpha/(1-omega))-omega*Dc*c_yss*Hss^alpha/(1-omega))^(-sigmaC) * (Hss^alpha)^((1+sigmaL)/alpha-1)) ;
+	chi			= (alpha*(1-omega)^sigmaL)*(varsigma-1)/varsigma/(((c_yss*h0^alpha/(1-omega))-omega*Dc*c_yss*h0^alpha/(1-omega))^(-sigmaC) * (h0^alpha)^((1+sigmaL)/alpha-1)) ;
 	
 	% <----   initial state   ----> %
 	tau0		= mu0^(theta2-1);
 	SIG0		= E0/((1-mu0)*Y0);
-	pb 			= 1000*theta2*0.109/(SIG0*(1-gS0)^(4*(2020-1985))*(1-deltapb)^(4*(2020-1985)));
+	pb 			= 1000*theta2*THETA2020/(SIG0*(1-gS0)^(4*(2020-1985))*(1-deltapb)^(4*(2020-1985)));
 	THETA0 		= pb/1000/theta2*delthet0*SIG0;
 	d0 			= exp(-gamma*(M0-M_1750));
     pi_bar0     = PI0; 
@@ -436,7 +420,7 @@ steady_state_model;
 	lb0  		= ((c0/(1-omega)-omega*(Dc*d0*c0))/(1-omega))^-sigmaC;
 	w0			= alpha*yy0/h0*(mc0-THETA0*mu0^theta2-THETA0*tau0*(1-mu0));
 	Z0			= Y0/(L0*yy0);
-    rr0 		= rr0_400/400; % set different set 
+    rr0 		= rr0_400/400;
     
 	% <------ terminal state -----> %
 	SIG		= 0;
@@ -451,7 +435,6 @@ steady_state_model;
 	mc 		= kappa/varsigma*((1+pi)*(pi-PI) -(1-varsigma)/kappa - (1-nu)*beta*(1+gZ)*(pi-PI)*(1+pi));
 	[Z,M]   = get_Z(Z0,gZ0,GZ1,L0,LT,lg,gS0,SIG0,GS1,deltapb,tau0,theta2,pb,chi,omega,Dc,Et,M_1750,nu,mc,sigmaC,xi,M0,tf,gamma,alpha,sigmaL);
 	d		= exp(-gamma*(M-M_1750));
-%	Z 		= get_Z(Z0,gZ0,GZ1);
 	x 		= (1-tf*THETA1*(tau0+Et*e_tau)^(theta2/(theta2-1))-nu*(1-mc));
 	junk  	= 0;
 	dy 		= log((1+gZ)*(1+gL));
@@ -523,10 +506,12 @@ end;
 resid;
 steady;
 
-
+% Generate a matlab function that update the initial vector y0
+% each time steady state is computed
 gen_histval_func(M_);
 
-options_.initial_guess_path = 'SSV_sims0';
-options_.expectation_window = 100;
-options_.forward_path 		= 3000-options_.expectation_window;
-options_.ep.Tdrop 			= 1; 
+%% Some options for simulating the model
+options_.initial_guess_path = 'SSV_sims0';							% guess MATLAB file (not compulsory, just speed up estimation)
+options_.expectation_window = 100;									% size of expectation window for extended path
+options_.forward_path 		= 3000-options_.expectation_window;		% size of simulations from 1984Q4 up to 3000 additional quarters (2777Q3)
+options_.ep.Tdrop 			= 1; 									% possibility to drop some initial period before estimating the model
