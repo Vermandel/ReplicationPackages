@@ -1,0 +1,65 @@
+function [T_order, T] = dynamic_resid_tt(y, x, params, steady_state, T_order, T)
+if T_order >= 0
+    return
+end
+T_order = 0;
+if size(T, 1) < 56
+    T = [T; NaN(56 - size(T, 1), 1)];
+end
+T(1) = 1-params(15);
+T(2) = (y(5)*params(31))^params(1);
+T(3) = params(40)*y(66)/T(2)-y(31);
+T(4) = params(15)*y(76)^params(11);
+T(5) = params(11)/(1-params(17));
+T(6) = (params(7)*y(64))^T(5);
+T(7) = T(1)*T(3)^params(11)+T(4)*T(6);
+T(8) = 1/params(11);
+T(9) = (y(96)*params(32))^(1-params(11));
+T(10) = 1/T(2);
+T(11) = T(9)*T(10);
+T(12) = T(1)*T(3)^(params(11)-1)-y(95)*(1-params(12));
+T(13) = params(15)*y(76)^(params(11)-1);
+T(14) = (params(11)-(1-params(17)))/(1-params(17));
+T(15) = (params(7)*y(64))^T(14);
+T(16) = (params(32)*y(159))^(1-params(17)-params(11));
+T(17) = T(13)*T(15)*T(16);
+T(18) = (params(31)*y(68))^params(1);
+T(19) = params(40)*y(129)/T(18)-y(94);
+T(20) = T(1)*T(19)^(params(11)-1)+params(12)*y(158);
+T(21) = params(15)*y(13)^(params(11)-1);
+T(22) = 1/(1-params(17));
+T(23) = (params(7)*y(1))^T(22);
+T(24) = y(96)*params(32)/T(23);
+T(25) = T(24)^(1-params(17)-params(11));
+T(26) = T(21)*T(25);
+T(27) = y(70)^params(14);
+T(28) = params(22)^(1-params(14));
+T(29) = 1-params(43)*y(122)^params(44);
+T(30) = y(71)/y(4);
+T(31) = T(30)^(-params(13));
+T(32) = params(23)/(1-params(13));
+T(33) = y(134)/y(67);
+T(34) = T(33)^(1-params(13));
+T(35) = y(140)/y(132);
+T(36) = params(24)+T(32)*T(30)^(1-params(13));
+T(37) = y(69)^params(28);
+T(38) = params(21)^(1-params(28));
+T(39) = params(5)*1000*(params(34)+params(1)*y(129)/(params(31)*y(68))+y(140)*params(25)*y(138)+y(141)*params(25)*y(137))+(1-params(27))*y(155);
+T(40) = params(34)+params(1)*y(129)/(params(31)*y(68))+y(140)*params(25)*y(138)+y(141)*params(25)*y(137)+(1-params(27))*y(187);
+T(41) = (y(142)+y(147))*y(76)*params(39)/y(84);
+T(42) = (y(128)-y(107))^2;
+T(43) = y(84)/y(79);
+T(44) = (steady_state(29))/(steady_state(3));
+T(45) = y(92)/(steady_state(29));
+T(46) = y(66)/(steady_state(3));
+T(47) = y(77)/(steady_state(14));
+T(48) = T(41)/(1+y(83));
+T(49) = y(94)/(steady_state(31));
+T(50) = y(5)*params(31)/(params(31)*y(62));
+T(51) = T(50)^(-params(1));
+T(52) = T(26)*T(51);
+T(53) = (params(31)*y(62))^params(1);
+T(54) = params(40)*y(3)/T(53)-y(63);
+T(55) = T(1)*T(54)^(params(11)-1)-(1-params(12))*y(32);
+T(56) = T(12)/T(55);
+end

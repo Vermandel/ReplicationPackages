@@ -1,0 +1,19 @@
+function [y, T] = dynamic_12(y, x, params, steady_state, sparse_rowval, sparse_colval, sparse_colptr, T)
+  y(102)=y(121);
+  y(114)=100*((y(135)+y(140))*y(72)*params(39)/y(80)-(1+y(79)));
+  y(107)=y(12)*params(39)*(y(75)+y(80))/y(20)-1;
+  y(97)=params(31)*y(64);
+  y(96)=100*(log(y(77))-log(y(17)));
+  T(29)=log(y(12));
+  y(95)=100*(T(29)+log(y(75))-log(y(15)));
+  y(94)=100*(log(y(69))-log(y(9)));
+  y(93)=y(92)*params(32);
+  y(89)=y(62)*params(1)*1000/(y(4)*params(31));
+  y(84)=100*(T(29)+log(y(67))-log(y(7)));
+  y(83)=T(29)+log(y(62))-log(y(2));
+  y(82)=100*(T(29)+log(y(73))-log(y(13)));
+  y(87)=y(66)*100/y(65);
+  y(85)=y(62)*100/y(73);
+  y(86)=y(79)*100;
+  y(81)=(y(12)*params(39)*(y(75)+y(80))/y(20)-(1+y(79)))*100;
+end

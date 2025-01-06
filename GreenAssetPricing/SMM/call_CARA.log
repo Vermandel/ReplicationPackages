@@ -1,0 +1,161 @@
+Starting Dynare (version 6.1).
+Calling Dynare with arguments: -DOPTIMAL=1 -DEZ=0 -DDIET=0
+Starting preprocessing of the model file ... 
+WARNING: the location C:\Users\gauth\AppData\Roaming\dynare.ini for the configuration file is obsolete; please see the reference manual for the new location. 
+WARNING: ../core_files/EZWH_ss.mod:79.2-81.2: Symbol pB declared twice. 
+WARNING: in the 'steady_state_model' block, variable 'vX' is declared twice 
+WARNING: in the 'steady_state_model' block, variable 'ESCC' is declared twice 
+WARNING: A parameter was used with a lead or a lag in the model block 
+Found 60 equation(s). 
+Evaluating expressions... 
+Computing static model derivatives (order 1). 
+Normalizing the static model... 
+Finding the optimal block decomposition of the static model... 
+15 block(s) found: 
+  14 recursive block(s) and 1 simultaneous block(s). 
+  the largest simultaneous block has 17 equation(s) 
+                                 and 17 feedback variable(s). 
+Computing dynamic model derivatives (order 3). 
+Normalizing the dynamic model... 
+Finding the optimal block decomposition of the dynamic model... 
+12 block(s) found: 
+  11 recursive block(s) and 1 simultaneous block(s). 
+  the largest simultaneous block has 19 equation(s) 
+                                 and 19 feedback variable(s). 
+Preprocessing completed. 
+Preprocessing time: 0h00m00s.
+
+
+Residuals of the static equations:
+Equation number  1: u            :       0.000000
+Equation number  2: sdf          :       0.000000
+Equation number  3: lambda       :       0.000000
+Equation number  4: multH        :       0.000000
+Equation number  5: z            :       0.000000
+Equation number  6: iH           :       0.000000
+Equation number  7: phi          :       0.000000
+Equation number  8: gamma        :       0.000000
+Equation number  9: 9            :       0.000000
+Equation number 10: w            :       0.000000
+Equation number 11: d            :       0.000000
+Equation number 12: varrho       :       0.000000
+Equation number 13: 13           :       0.000000
+Equation number 14: q            :       0.000000
+Equation number 15: 15           :       0.000000
+Equation number 16: y            :       0.000000
+Equation number 17: kT           :       0.000000
+Equation number 18: 18           :       0.000000
+Equation number 19: e            :       0.000000
+Equation number 20: 20           :       0.000000
+Equation number 21: 21           :       0.000000
+Equation number 22: pE           :       0.000000
+Equation number 23: 23           :       0.000000
+Equation number 24: realEPquat   :       0.000000
+Equation number 25: rFquat       :       0.000000
+Equation number 26: cyrat        :       0.000000
+Equation number 27: kHkYrat      :       0.000000
+Equation number 28: gy           :       0.000000
+Equation number 29: gc           :       0.000000
+Equation number 30: giT          :       0.000000
+Equation number 31: c_x          :       0.000000
+Equation number 32: SCC          :       0.000000
+Equation number 33: 33           :       0.000000
+Equation number 34: 34           :       0.000000
+Equation number 35: vX           :       0.000000
+Equation number 36: U            :       0.000000
+Equation number 37: gq           :       0.000000
+Equation number 38: gd           :       0.000000
+Equation number 39: gE           :       0.000000
+Equation number 40: X            :       0.000000
+Equation number 41: asset_return :       0.000000
+Equation number 42: EPquat       :       0.000000
+Equation number 43: Esdf         :       0.000000
+Equation number 44: muSDF        :       0.000000
+Equation number 45: varSDF       :       0.000000
+Equation number 46: skewSDF      :       0.000000
+Equation number 47: ln_pd        :       0.000000
+Equation number 48: EC1          :       0.000000
+Equation number 49: pB           :       0.000000
+Equation number 50: EretB        :       0.000000
+Equation number 51: bpann        :       0.000000
+Equation number 52: ESCC         :       0.000000
+Equation number 53: ln_SCC       :       0.000000
+Equation number 54: ln_c         :       0.000000
+Equation number 55: ln_y         :       0.000000
+Equation number 56: ln_c100      :       0.000000
+Equation number 57: ln_EP        :       0.000000
+Equation number 58: ln_rF        :       0.000000
+Equation number 59: ln_z         :       0.000000
+Equation number 60: vE_irfs      :       0.000000
+
+
+[Warning: Some of the parameters have no value (scale_ce, estar, kappa, th1, th2, zetaY, g, scale_u) when
+using steady. If these parameters are not initialized in a steadystate file or a steady_state_model-block,
+Dynare may not be able to solve the model. Note that simul, perfect_foresight_setup, and
+perfect_foresight_solver do not automatically call the steady state file.] 
+
+STEADY-STATE RESULTS:
+
+sdf          		 0.94885
+c            		 2.01663
+kT           		 15.2551
+x            		 5.3426
+kY           		 14.8092
+kH           		 0.445917
+iT           		 0.219203
+lambda       		 2.30286
+q            		 1
+phi          		 38.5372
+varrho       		 0.996964
+gamma        		 1.00617
+y            		 2.79563
+iH           		 0.00616917
+d            		 0.694868
+aY           		 1
+e            		 1.02845
+w            		 10.9536
+rF           		 0.0539072
+pE           		 14.6457
+realEPquat   		 0
+gy           		 0.615022
+gc           		 0.00615022
+giT          		 0.615022
+cyrat        		 72.1351
+rFquat       		 5.39072
+kHkYrat      		 3.01108
+SCC          		 7.59963
+c_x          		 0.606583
+z            		 0
+multH        		 117.211
+u            		 -20.558
+U            		 -20.558
+gq           		 0
+gd           		 0.615022
+gE           		 0
+X            		 534.26
+pB           		 16.5538
+ln_SCC       		 0
+ln_c         		 0
+ln_y         		 0
+Esdf         		 0.94885
+muSDF        		 0.94885
+varSDF       		 0
+skewSDF      		 0
+ln_pd        		 3.04818
+asset_return 		 0.0539072
+EC1          		 0
+EretB        		 1.06041
+bpann        		 0.650173
+ln_c100      		 0
+ESCC         		 7.59963
+vE_irfs      		 -4.87966
+EPquat       		 0
+ln_z         		 0
+ln_EP        		 0
+ln_rF        		 0.0525044
+mu           		 0.182495
+vE           		 0.00759963
+vX           		 0.0278653
+Total computing time : 0h00m03s
+Note: 5 warning(s) encountered in the preprocessor
+Note: warning(s) encountered in MATLAB/Octave code
