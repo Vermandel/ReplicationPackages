@@ -74,7 +74,7 @@ This repository contains the code and data necessary to replicate the results pr
 ## Citation
 If you use this repository or any part of the code in your work, please cite:
 
-> Benmir, G., Jaccard, I., & G. Vermandel "Green Asset Pricing." ECB Working Paper No. 2477.
+> Benmir, G., Jaccard, I., & Vermandel, G. "Green Asset Pricing." ECB Working Paper No. 2477.
 
 ---
 
