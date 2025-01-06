@@ -80,3 +80,7 @@ If you use this repository or any part of the code in your work, please cite:
 
 For any issues or questions, please open an issue in this repository or contact the authors.
 
+
+## Contact
+For questions or issues, please refer to the CEPR paper or contact the authors:
+- **Gauthier Vermandel**: [gauthier@vermandel.fr](mailto:gauthier@vermandel.fr)
