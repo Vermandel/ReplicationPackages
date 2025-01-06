@@ -83,4 +83,5 @@ For any issues or questions, please open an issue in this repository or contact 
 
 ## Contact
 For questions or issues, please refer to the ECB Working Paper paper or contact the authors:
+- **Ghassane Benmir**: [benmir.ghassane@gmail.com](mailto:benmir.ghassane@gmail.com)
 - **Gauthier Vermandel**: [gauthier@vermandel.fr](mailto:gauthier@vermandel.fr)
